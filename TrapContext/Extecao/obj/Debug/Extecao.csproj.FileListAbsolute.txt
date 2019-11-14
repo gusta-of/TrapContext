@@ -1,9 +1,0 @@
-C:\Users\DEV-FERNANDES\source\repos\TrapContext\Extecao\bin\Debug\Extecao.dll
-C:\Users\DEV-FERNANDES\source\repos\TrapContext\Extecao\bin\Debug\Extecao.pdb
-C:\Users\DEV-FERNANDES\source\repos\TrapContext\Extecao\bin\Debug\TrapContext.exe
-C:\Users\DEV-FERNANDES\source\repos\TrapContext\Extecao\bin\Debug\TrapContext.pdb
-C:\Users\DEV-FERNANDES\source\repos\TrapContext\Extecao\bin\Debug\TrapContext.exe.config
-C:\Users\DEV-FERNANDES\source\repos\TrapContext\Extecao\obj\Debug\Extecao.csprojAssemblyReference.cache
-C:\Users\DEV-FERNANDES\source\repos\TrapContext\Extecao\obj\Debug\Extecao.csproj.CopyComplete
-C:\Users\DEV-FERNANDES\source\repos\TrapContext\Extecao\obj\Debug\Extecao.dll
-C:\Users\DEV-FERNANDES\source\repos\TrapContext\Extecao\obj\Debug\Extecao.pdb
