@@ -55,8 +55,6 @@ namespace TrapContext.Trap
             var instancia = _processosExtendidos[10];
             var type = (Type)instancia.GetType();
             var methodInfo = type.GetMethod("Executa");
-            //var tipo =
-            //    GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
             return methodInfo.Invoke(instancia, methodCallMessage.Args);
         }
     }
