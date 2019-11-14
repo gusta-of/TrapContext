@@ -12,7 +12,7 @@ namespace TrapContext.Trap
 {
     public class GereciadorTeste
     {
-        private static Dictionary<int, dynamic> _processosExtendidos = new Dictionary<int, dynamic>();
+        private static Dictionary<int, Type> _processosExtendidos = new Dictionary<int, Type>();
 
         static GereciadorTeste()
         {
@@ -40,7 +40,7 @@ namespace TrapContext.Trap
                     {
                         continue;
                     }
-                    _processosExtendidos.Add(attribute.Key, (ProcessoPadrao)Activator.CreateInstance(tipo));
+                    _processosExtendidos.Add(attribute.Key, tipo);
                 }
             }
         }
@@ -52,11 +52,12 @@ namespace TrapContext.Trap
 
         public static object InvoqueMetodo(IMethodCallMessage methodCallMessage)
         {
-            var instancia = _processosExtendidos[10];
-            var type = (Type)instancia.GetType();
+            var type = _processosExtendidos[10];
+            object instancia = CrieInstancia(type);
             var methodInfo = type.GetMethod("Executa");
             return methodInfo.Invoke(instancia, methodCallMessage.Args);
         }
 
+        private static object CrieInstancia(Type type) => Activator.CreateInstance(type);
     }
 }
