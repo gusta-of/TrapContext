@@ -1,13 +1,14 @@
-﻿using TrapContext.Trap;
+﻿using System.Windows.Forms;
+using TrapContext.Trap;
 
 namespace Extencoes.processo
 {
-    //[ProcessoExtendido(10)]
-    public class ProcessoPadrao : TrapContext.Processo.Negocio.ProcessoPadrao
+    [ProcessoExtendido(10)]
+    public class ProcessoDeExtencao : TrapContext.Processo.Negocio.ProcessoPadrao
     {
-
         public override byte[] Executa()
         {
+            MessageBox.Show("Metodo de Extenção!");
             return new byte[] { 0, 1, 1 };
         }
     }
