@@ -15,8 +15,12 @@
 
 # Build results
 obj/*
-TrapContext/Extencoes/obj/*
 TrapContext/obj/*
+TrapContext/bin/*
+TrapContext/Extencoes/bin/*
+TrapContext/Extencoes/obj/*
+TrapContext/.vs/*
+TrapContext/Extencoes/.vs/*
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
