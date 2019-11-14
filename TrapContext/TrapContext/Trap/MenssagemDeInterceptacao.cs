@@ -32,8 +32,7 @@ namespace TrapContext.Trap
             {
                 return _mNext.SyncProcessMessage(imCall);
             }
-            var instancia = GereciadorTeste.InvoqueMetodo(chamadaDeMetodoMessage);
-            return new RetornoMetodo(chamadaDeMetodoMessage, instancia);
+            return GereciadorTeste.CrieExtencaoERetorne(chamadaDeMetodoMessage);
         }
     }
 }

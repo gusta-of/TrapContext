@@ -13,7 +13,6 @@ namespace TrapContext.Trap
         public RetornoMetodo(Exception excecao, IMethodCallMessage mensagemCall)
             : base(excecao, mensagemCall)
         {
-
         }
 
         public RetornoMetodo(IMethodCallMessage mensagemCall, object valorRetorno)

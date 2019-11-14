@@ -60,6 +60,7 @@
     <Compile Include="Trap\GereciadorTeste.cs" />
     <Compile Include="Trap\InterceptAspect.cs" />
     <Compile Include="Trap\MenssagemDeInterceptacao.cs" />
+    <Compile Include="Trap\ProcessoExtendido.cs" />
     <Compile Include="Trap\ProcessoExtentdidoAttribute.cs" />
     <Compile Include="Trap\RetornoMetodo.cs" />
     <Compile Include="Trap\TrapContext.cs" />

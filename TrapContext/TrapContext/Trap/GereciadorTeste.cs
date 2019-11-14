@@ -50,14 +50,10 @@ namespace TrapContext.Trap
             return _processosExtendidos.ContainsKey(10);
         }
 
-        public static object InvoqueMetodo(IMethodCallMessage methodCallMessage)
+        public static IMessage CrieExtencaoERetorne(IMethodCallMessage methodSCallMessage)
         {
             var type = _processosExtendidos[10];
-            object instancia = CrieInstancia(type);
-            var methodInfo = type.GetMethod("Executa");
-            return methodInfo.Invoke(instancia, methodCallMessage.Args);
+            return new ProcessoExtendido(type).CrieExtencaoERetorne(methodSCallMessage);
         }
-
-        private static object CrieInstancia(Type type) => Activator.CreateInstance(type);
     }
 }
