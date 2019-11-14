@@ -1,0 +1,9 @@
+C:\Users\DEV-FERNANDES\source\repos\TrapContext\TrapContext\bin\Debug\TrapContext.exe.config
+C:\Users\DEV-FERNANDES\source\repos\TrapContext\TrapContext\bin\Debug\TrapContext.exe
+C:\Users\DEV-FERNANDES\source\repos\TrapContext\TrapContext\bin\Debug\TrapContext.pdb
+C:\Users\DEV-FERNANDES\source\repos\TrapContext\TrapContext\obj\Debug\TrapContext.csprojAssemblyReference.cache
+C:\Users\DEV-FERNANDES\source\repos\TrapContext\TrapContext\obj\Debug\TrapContext.Form1.resources
+C:\Users\DEV-FERNANDES\source\repos\TrapContext\TrapContext\obj\Debug\TrapContext.Properties.Resources.resources
+C:\Users\DEV-FERNANDES\source\repos\TrapContext\TrapContext\obj\Debug\TrapContext.csproj.GenerateResource.cache
+C:\Users\DEV-FERNANDES\source\repos\TrapContext\TrapContext\obj\Debug\TrapContext.exe
+C:\Users\DEV-FERNANDES\source\repos\TrapContext\TrapContext\obj\Debug\TrapContext.pdb

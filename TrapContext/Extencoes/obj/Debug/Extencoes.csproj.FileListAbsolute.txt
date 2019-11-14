@@ -1,0 +1,9 @@
+C:\Users\DEV-FERNANDES\source\repos\TrapContext\Extencoes\bin\Debug\Extencoes.dll
+C:\Users\DEV-FERNANDES\source\repos\TrapContext\Extencoes\bin\Debug\Extencoes.pdb
+C:\Users\DEV-FERNANDES\source\repos\TrapContext\Extencoes\bin\Debug\TrapContext.exe
+C:\Users\DEV-FERNANDES\source\repos\TrapContext\Extencoes\bin\Debug\TrapContext.pdb
+C:\Users\DEV-FERNANDES\source\repos\TrapContext\Extencoes\bin\Debug\TrapContext.exe.config
+C:\Users\DEV-FERNANDES\source\repos\TrapContext\Extencoes\obj\Debug\Extencoes.csprojAssemblyReference.cache
+C:\Users\DEV-FERNANDES\source\repos\TrapContext\Extencoes\obj\Debug\Extencoes.csproj.CopyComplete
+C:\Users\DEV-FERNANDES\source\repos\TrapContext\Extencoes\obj\Debug\Extencoes.dll
+C:\Users\DEV-FERNANDES\source\repos\TrapContext\Extencoes\obj\Debug\Extencoes.pdb
