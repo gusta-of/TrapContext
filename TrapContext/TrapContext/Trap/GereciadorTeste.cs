@@ -47,7 +47,7 @@ namespace TrapContext.Trap
 
         public static bool MetodoEstaExtendido()
         {
-            return _processosExtendidos[10] != null;
+            return _processosExtendidos.ContainsKey(10);
         }
 
         public static object InvoqueMetodo(IMethodCallMessage methodCallMessage)
