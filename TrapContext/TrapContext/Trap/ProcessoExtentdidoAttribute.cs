@@ -7,7 +7,19 @@ using System.Threading.Tasks;
 namespace TrapContext.Trap
 {
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
-    public class ProcessoExtentdidoAttribute : Attribute
+    public class ProcessoExtendidoAttribute : Attribute
     {
+        public int Key { get; set; }
+        public bool UtilizaCache { get; set; }
+        public ProcessoExtendidoAttribute(int key)
+            : this(key, false)
+        {
+        }
+
+        public ProcessoExtendidoAttribute(int key, bool utilizaCache)
+        {
+            Key = key;
+           UtilizaCache = utilizaCache;
+        }
     }
 }

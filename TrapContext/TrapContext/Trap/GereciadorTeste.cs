@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using TrapContext.Processo.Negocio;
@@ -11,7 +12,7 @@ namespace TrapContext.Trap
 {
     public static class GereciadorTeste
     {
-        private static Dictionary<string, dynamic> _processosExtendidos = new Dictionary<string, dynamic>();
+        private static Dictionary<int, dynamic> _processosExtendidos = new Dictionary<int, dynamic>();
 
         static GereciadorTeste()
         {
@@ -26,24 +27,37 @@ namespace TrapContext.Trap
             var tipos = Assembly.LoadFrom(path).GetTypes();
 
             var tiposExtendidos = from tipo in tipos
-                                  where tipo.IsDefined(typeof(ProcessoExtentdidoAttribute), false)
+                                  where tipo.IsDefined(typeof(ProcessoExtendidoAttribute), false)
                                   select tipo;
 
             foreach (var tipo in tiposExtendidos)
             {
-                if (_processosExtendidos.TryGetValue(tipo.Name, out var processo))
+                var atributosProcessoExtendido = tipo.GetCustomAttributes(typeof(ProcessoExtendidoAttribute), false).Cast<ProcessoExtendidoAttribute>();
+                foreach (var attribute in atributosProcessoExtendido)
                 {
-                    continue;
-                }
 
-                _processosExtendidos.Add(tipo.Name, Activator.CreateInstance(tipo));
+                    if (_processosExtendidos.TryGetValue(attribute.Key, out var processo))
+                    {
+                        continue;
+                    }
+                    _processosExtendidos.Add(attribute.Key, (ProcessoPadrao)Activator.CreateInstance(tipo));
+                }
             }
         }
 
         public static bool MetodoEstaExtendido()
         {
+            return _processosExtendidos[10] != null;
+        }
 
-            return true;
+        public static object InvoqueMetodo(IMethodCallMessage methodCallMessage)
+        {
+            var instancia = _processosExtendidos[10];
+            var type = (Type)instancia.GetType();
+            var methodInfo = type.GetMethod("Executa");
+            //var tipo =
+            //    GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+            return methodInfo.Invoke(instancia, methodCallMessage.Args);
         }
     }
 }

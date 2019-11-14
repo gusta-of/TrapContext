@@ -2,7 +2,7 @@
 
 namespace Extencoes.processo
 {
-    [ProcessoExtentdido]
+    [ProcessoExtendido(10)]
     public class ProcessoPadrao : TrapContext.Processo.Negocio.ProcessoPadrao
     {
 

@@ -26,8 +26,8 @@ namespace TrapContext
         {
             base.OnShown(e);
 
-            var processo = new ProcessoPadrao();
-            var boleano = processo.PodeUtilizarFormatoEspecifico();
+            //var processo = new ProcessoPadrao();
+            //var boleano = processo.PodeUtilizarFormatoEspecifico();
         }
 
 

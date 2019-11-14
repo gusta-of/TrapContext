@@ -4,7 +4,6 @@ using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
-using TrapContext.Processo.Negocio;
 
 namespace TrapContext.Trap
 {
@@ -29,12 +28,12 @@ namespace TrapContext.Trap
             IMethodCallMessage chamadaDeMetodoMessage = (IMethodCallMessage)imCall;
             var teste = chamadaDeMetodoMessage.MethodBase.ReflectedType.Name;
 
-            if (GereciadorTeste.MetodoEstaExtendido())
+            if (!GereciadorTeste.MetodoEstaExtendido())
             {
                 return _mNext.SyncProcessMessage(imCall);
             }
-            var obj = Activator.CreateInstance(typeof(ProcessoPadrao));
-            return new RetornoMetodo(chamadaDeMetodoMessage, obj);
+            var instancia = GereciadorTeste.InvoqueMetodo(chamadaDeMetodoMessage);
+            return new RetornoMetodo(chamadaDeMetodoMessage, instancia);
         }
     }
 }
