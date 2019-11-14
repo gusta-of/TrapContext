@@ -10,7 +10,7 @@ using TrapContext.Processo.Negocio;
 
 namespace TrapContext.Trap
 {
-    public static class GereciadorTeste
+    public class GereciadorTeste
     {
         private static Dictionary<int, dynamic> _processosExtendidos = new Dictionary<int, dynamic>();
 
@@ -57,5 +57,6 @@ namespace TrapContext.Trap
             var methodInfo = type.GetMethod("Executa");
             return methodInfo.Invoke(instancia, methodCallMessage.Args);
         }
+
     }
 }
