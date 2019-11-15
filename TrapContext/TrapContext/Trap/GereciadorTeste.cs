@@ -19,9 +19,9 @@ namespace TrapContext.Trap
             var file = new FileInfo(@"..\\..\\");
             var path = String.Empty;
 #if DEBUG
-            path = $"{file.Directory.Parent.FullName}\\Extencoes\\bin\\Debug\\Extencoes.dll";
+            path = $"{file.Directory.Parent.FullName}\\Extencoes\\bin\\Extencoes.dll";
 #else
-            path = $"{file.Directory.Parent.FullName}\\Extencoes\\bin\\Release\\Extencoes.dll";
+            path = $"{file.Directory.Parent.FullName}\\Extencoes\\bin\\Extencoes.dll";
 #endif
 
             var tipos = Assembly.LoadFrom(path).GetTypes();
