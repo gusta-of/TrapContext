@@ -4,7 +4,7 @@ using TrapContext.Trap;
 namespace Extencoes.processo
 {
     [ProcessoExtendido(10)]
-    public class ProcessoDeExtencao : TrapContext.Processo.Negocio.ProcessoPadrao
+    public class ProcessoPadrao : TrapContext.Processo.Negocio.ProcessoPadrao
     {
         public override byte[] Executa()
         {
