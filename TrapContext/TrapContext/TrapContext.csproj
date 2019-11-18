@@ -58,8 +58,10 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Trap\GereciadorTeste.cs" />
+    <Compile Include="Trap\InfoMetodoEstendido.cs" />
     <Compile Include="Trap\InterceptAspect.cs" />
     <Compile Include="Trap\MenssagemDeInterceptacao.cs" />
+    <Compile Include="Trap\MetodoExtendido.cs" />
     <Compile Include="Trap\ProcessoExtendido.cs" />
     <Compile Include="Trap\ProcessoExtentdidoAttribute.cs" />
     <Compile Include="Trap\RetornoMetodo.cs" />

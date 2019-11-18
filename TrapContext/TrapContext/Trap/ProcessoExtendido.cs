@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,19 +10,39 @@ namespace TrapContext.Trap
 {
     public class ProcessoExtendido
     {
-        public Type TypeExtendido { get; private set; }
-        public ProcessoExtendido(Type type)
+        private Dictionary<string, MetodoExtendido> _metodosExtendidos = new Dictionary<string, MetodoExtendido>();
+        public void AddProcesso(Type type)
         {
-            TypeExtendido = type;
+            MetodoExtendido metodosExtendidosDoProcesso;
+
+            if (!_metodosExtendidos.TryGetValue(type.Name, out metodosExtendidosDoProcesso))
+            {
+                metodosExtendidosDoProcesso = new MetodoExtendido(type);
+                _metodosExtendidos.Add(type.Name, metodosExtendidosDoProcesso);
+            }
+
+            foreach (MethodInfo informacaoMetodo in type.GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly))
+            {
+                var teste = informacaoMetodo.Name;
+                metodosExtendidosDoProcesso.AddMetodo(informacaoMetodo);
+            }
+        }
+
+        public bool MetodoEstaExtendido(IMethodCallMessage methodCallMessage)
+        {
+            MetodoExtendido metodosExtendidosDoProcesso;
+
+            if (_metodosExtendidos.TryGetValue(methodCallMessage.MethodBase.ReflectedType.Name, out metodosExtendidosDoProcesso))
+            {
+                return metodosExtendidosDoProcesso.MetodoEstaExtendido(methodCallMessage);
+            }
+            return false;
         }
 
         public IMessage CrieExtencaoERetorne(IMethodCallMessage methodCallMessage)
         {
-            object instancia = CrieInstancia(TypeExtendido);
-            var methodInfo = TypeExtendido.GetMethod("Executa");
-           return new RetornoMetodo(methodCallMessage, methodInfo.Invoke(instancia, methodCallMessage.Args));
+            var processoExtendido = _metodosExtendidos[methodCallMessage.MethodBase.ReflectedType.Name];
+            return processoExtendido.ExecuteMetodoEObtenhaRetorno(methodCallMessage);
         }
-
-        private object CrieInstancia(Type type) => Activator.CreateInstance(type);
     }
 }
