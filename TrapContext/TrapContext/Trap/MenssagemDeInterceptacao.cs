@@ -28,7 +28,7 @@ namespace TrapContext.Trap
             IMethodCallMessage chamadaDeMetodoMessage = (IMethodCallMessage)imCall;
             var teste = chamadaDeMetodoMessage.MethodBase.ReflectedType.Name;
 
-            if (!GereciadorTeste.MetodoEstaExtendido())
+            if (!GereciadorTeste.MetodoEstaExtendido(chamadaDeMetodoMessage))
             {
                 return _mNext.SyncProcessMessage(imCall);
             }
