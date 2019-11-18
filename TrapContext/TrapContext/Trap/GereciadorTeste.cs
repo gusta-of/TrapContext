@@ -16,12 +16,12 @@ namespace TrapContext.Trap
 
         static GereciadorTeste()
         {
-            var file = new FileInfo(@"..\\..\\");
+            var file = new FileInfo(@"..\\..\\..\\");
             var path = String.Empty;
 #if DEBUG
-            path = $"{file.Directory.Parent.FullName}\\Extencoes\\bin\\Extencoes.dll";
+            path = $"{file.Directory.Parent.FullName}\\Binarios\\Extencoes.dll";
 #else
-            path = $"{file.Directory.Parent.FullName}\\Extencoes\\bin\\Extencoes.dll";
+            path = $"{file.Directory.Parent.FullName}\\Binarios\\Extencoes.dll";
 #endif
 
             var tipos = Assembly.LoadFrom(path).GetTypes();
