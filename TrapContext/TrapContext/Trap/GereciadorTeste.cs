@@ -26,14 +26,7 @@ namespace TrapContext.Trap
                 _processosExtendidos = new Dictionary<int, ProcessoExtendido>();
 
                 var file = new FileInfo(@"..\\..\\..\\");
-                var path = String.Empty;
-#if DEBUG
-                path = $"{file.Directory.Parent.FullName}\\Binarios\\Extencoes.dll";
-#else
-            path = $"{file.Directory.Parent.FullName}\\Binarios\\Extencoes.dll";
-#endif
-
-                var tipos = Assembly.LoadFrom(path).GetTypes();
+                var tipos = Assembly.LoadFrom(Path.Combine(Path.Combine(file.Directory.Parent.FullName, "Binarios"), "Extencoes.dll")).GetTypes();
 
                 var tiposExtendidos = from tipo in tipos
                                       where tipo.IsDefined(typeof(ProcessoExtendidoAttribute), false)
